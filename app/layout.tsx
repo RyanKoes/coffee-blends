@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Sen, Unica_One } from "next/font/google";
 import "./globals.css";
 
@@ -32,10 +33,13 @@ export default function RootLayout({
             <nav aria-label="Primary">
               <ul>
                 <li>
-                  <a href="#builder">Blend Builder</a>
+                  <Link href="/#builder">Blend Builder</Link>
                 </li>
                 <li>
-                  <a href="#results">Results</a>
+                  <Link href="/#results">Results</Link>
+                </li>
+                <li>
+                  <Link href="/learn">Learn</Link>
                 </li>
               </ul>
             </nav>
