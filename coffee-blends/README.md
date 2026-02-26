@@ -1,8 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Coffee Blend Builder (Next.js)
+
+Describe the coffee you want (brew method + flavor targets) and generate a suggested blend recipe (origins, processing, altitude, roast level, and ratios) via a Gemini-powered API route.
 
 ## Getting Started
 
-First, run the development server:
+### 1) Configure env vars
+
+Copy the example env file and add your key (keep this file private; don’t commit it):
+
+```bash
+cp .env.local.example .env.local
+```
+
+Then edit `.env.local` and set:
+
+```bash
+GEMINI_API_KEY=your_key_here
+# Optional (defaults to gemini-2.5-flash-lite):
+GEMINI_MODEL=gemini-2.5-flash-lite
+```
+
+### 2) Run the dev server
 
 ```bash
 npm run dev
@@ -16,9 +34,12 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Key files:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- The UI lives in `app/page.tsx`
+- The Gemini call is in `app/api/blend/route.ts`
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to load Sen + Unica One.
 
 ## Learn More
 
